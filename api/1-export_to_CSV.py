@@ -66,7 +66,7 @@ if __name__ == "__main__":
     try:
         employee_id = int(sys.argv[1])
     except ValueError:
-        print("Employee ID must be an integer. Please enter a valid Employee ID.")
+        print("Employee ID must be an integer.")
         sys.exit(1)
 
     get_csv_export(employee_id)

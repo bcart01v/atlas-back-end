@@ -3,3 +3,4 @@ api/3.csv
 .gitignore
 api/6.csv
 *.csv
+*.JSON

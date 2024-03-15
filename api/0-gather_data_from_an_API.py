@@ -22,8 +22,8 @@ def get_employee_todo_progress(employee_id):
     # Get the User's Name
     user_response = requests.get(f"{USERS}{employee_id}")
     if user_response.status_code != 200:
-        print("Failed to retrieve employee information")
-        print("please check parameters")
+        print("Failed to retrieve employee information" \
+            "please check parameters")
         return
 
     employee_name = user_response.json().get('name')
@@ -34,8 +34,8 @@ def get_employee_todo_progress(employee_id):
     # Get the ToDo list for the specific employee.
     todos_response = requests.get(f"{TODOS}{employee_id}")
     if todos_response.status_code != 200:
-        print("Failed to retrieve TODO list")
-        print("please check your parameters")
+        print("Failed to retrieve TODO list" \
+        "please check your parameters")
         return
 
     todos = todos_response.json()
@@ -44,11 +44,10 @@ def get_employee_todo_progress(employee_id):
     completed_tasks = [task for task in todos if task['completed']]
 
     # Printing the TODO list progress
-    print(f"Employee {employee_name} is done with tasks \
-        ({len(completed_tasks)}/{len(todos)}):")
+    print(f"Employee {employee_name} is done with tasks" \
+        f"({len(completed_tasks)}/{len(todos)}):")
     for task in completed_tasks:
         print(f"\t {task['title']}")
-
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

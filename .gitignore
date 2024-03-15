@@ -1,3 +1,5 @@
 api/2.csv
 api/3.csv
 .gitignore
+api/6.csv
+*.csv

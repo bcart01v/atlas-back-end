@@ -58,11 +58,13 @@ def get_csv_export(employee_id):
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
 
         # Write the header's
-        writer.writerow(["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"])
+        writer.writerow(["USER_ID", "USERNAME",\
+            "TASK_COMPLETED_STATUS", "TASK_TITLE"])
 
         # Write the tasks
         for task in todos:
-            writer.writerow([employee_id, username, task['completed'], task['title']])
+            writer.writerow([employee_id, username,\
+                task['completed'], task['title']])
 
 
 if __name__ == "__main__":
